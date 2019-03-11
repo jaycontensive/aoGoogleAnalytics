@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<Collection name="Google Analytics" guid="{B1743401-851B-4A51-AF03-36D9016D18AD}" system="Yes" updatable="Yes" blockNavigatorNode="No">
+<Collection name="Analytics" guid="{B1743401-851B-4A51-AF03-36D9016D18AD}" system="No" updatable="Yes" blockNavigatorNode="No">
 	<HelpLink></HelpLink>
 	<Help></Help>
-	<Addon name="Add Analytics To All Pages" guid="{C9EFB120-F42F-4BBF-85B5-F03CA907AD7F}" type="Add-on">
+	<Addon name="Add Google Analytics To All Pages" guid="{C9EFB120-F42F-4BBF-85B5-F03CA907AD7F}" type="Add-on">
 		<Copy></Copy>
 		<CopyText></CopyText>
 		<ActiveXProgramID></ActiveXProgramID>
@@ -39,11 +39,11 @@
 		<Styles></Styles>
 		<Scripting Language="" EntryPoint="" Timeout="5000">
 			<Code><![CDATA[function m
-cp.doc.addheadTag( cp.file.readvirtual( "Settings/GoogleAnalyticsGobalSiteTag.txt" ))
+cp.doc.addheadTag( cp.file.readvirtual( "Settings/GoogleAnalyticsSiteTag.txt" ))
 end function]]></Code>
 		</Scripting>
 	</Addon>
-	<Addon name="Google Analytics Settings" guid="{C0CC032E-AE4A-4623-A5F9-5EB4A7E00C2A}" type="Setting">
+	<Addon name="Analytics Settings" guid="{C0CC032E-AE4A-4623-A5F9-5EB4A7E00C2A}" type="Setting">
 		<Copy></Copy>
 		<CopyText></CopyText>
 		<ActiveXProgramID></ActiveXProgramID>
@@ -57,8 +57,8 @@ end function]]></Code>
 		<InIframe>No</InIframe>
 		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML><![CDATA[<Form>
-	<Tab name="Analytics Initialization" description="Setting for the Analytics Initialization">
-		<SiteProperty caption="Google Analytics Global Site Tag" name="GoogleAnalyticsGobalSiteTag" ReadOnly="0" Type="TextFile" Selector="" Description="Go to Google Analytics and copy your Global Site Tag (gtag.js) here."></SiteProperty>
+	<Tab name="Google" description="Setting for Google Analytics">
+		<FileContent caption="Google Analytics Global Site Tag" name="GoogleAnalyticsSiteTag" filename="analytics\GoogleAnalyticsSiteTag.html" description="Go to Google Analytics and copy your Global Site Tag (gtag.js) here."></FileContent>
 	</Tab>
 </Form>]]></FormXML>
 		<IsInline>No</IsInline>
