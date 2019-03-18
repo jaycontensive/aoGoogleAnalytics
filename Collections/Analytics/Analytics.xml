@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="windows-1252"?>
 <Collection name="Analytics" guid="{B1743401-851B-4A51-AF03-36D9016D18AD}" system="No" updatable="Yes" blockNavigatorNode="No">
 	<HelpLink></HelpLink>
 	<Help></Help>
@@ -38,9 +37,15 @@
 		<StylesLinkHref></StylesLinkHref>
 		<Styles></Styles>
 		<Scripting Language="" EntryPoint="" Timeout="5000">
-			<Code><![CDATA[function m
-cp.doc.addheadTag( cp.file.readvirtual( "Settings/GoogleAnalyticsSiteTag.txt" ))
-end function]]></Code>
+			<Code><![CDATA[
+
+function m
+    if (not cp.user.isAdmin) then
+        cp.doc.addheadTag( cp.file.readvirtual( "analytics\GoogleAnalyticsSiteTag.html" ))
+    end if
+end function
+
+]]></Code>
 		</Scripting>
 	</Addon>
 	<Addon name="Analytics Settings" guid="{C0CC032E-AE4A-4623-A5F9-5EB4A7E00C2A}" type="Setting">
