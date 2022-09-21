@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Collection name="Google Analytics" guid="{b1743401-851b-4a51-af03-36d9016d18ad}" system="No" updatable="Yes" blockNavigatorNode="No" onInstallAddonGuid="">
+	<HelpLink></HelpLink>
+	<Help></Help>
+	<Addon name="Add Google Analytics To All Pages" guid="{C9EFB120-F42F-4BBF-85B5-F03CA907AD7F}" type="Add-on">
+		<Copy></Copy>
+		<CopyText></CopyText>
+		<DotNetClass></DotNetClass>
+		<ArgumentList></ArgumentList>
+		<instanceSettingPrimaryContentId></instanceSettingPrimaryContentId>
+		<AsAjax>No</AsAjax>
+		<Filter>No</Filter>
+		<Help></Help>
+		<HelpLink></HelpLink>
+		<Icon Link="/analytics.png" width="57" height="59" sprites="4" />
+		<InIframe>No</InIframe>
+		<BlockEditTools>Yes</BlockEditTools>
+		<AliasList></AliasList>
+		<FormXML></FormXML>
+		<IsInline>No</IsInline>
+		<JavascriptInHead></JavascriptInHead>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
+		<Content>No</Content>
+		<Template>No</Template>
+		<Email>No</Email>
+		<Admin>Yes</Admin>
+		<OnPageEndEvent>No</OnPageEndEvent>
+		<OnPageStartEvent>No</OnPageStartEvent>
+		<OnBodyStart>No</OnBodyStart>
+		<OnBodyEnd>Yes</OnBodyEnd>
+		<RemoteMethod>No</RemoteMethod>
+		<Diagnostic>No</Diagnostic>
+		<category></category>
+		<ProcessRunOnce>No</ProcessRunOnce>
+		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
+		<PageTitle></PageTitle>
+		<RemoteAssetLink></RemoteAssetLink>
+		<Styles></Styles>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
+			<Code><![CDATA[function m
+    m = "<!-- Analytics-Addon -->"
+    dim siteTag, cacheKey
+    'cacheKey = cp.cache.createKey("GoogleAnalyticsSiteTag")
+    'siteTag = cp.cache.getText(cacheKey)
+	'if ( siteTag="" ) then
+        siteTag = cp.cdnFiles.read( "analytics\GoogleAnalyticsSiteTag.html" )
+        'call cp.cache.store( cacheKey, siteTag )
+        'siteTag = siteTag & "<!-- cache miss -->"
+    'end if
+    m = m & siteTag
+end function]]></Code>
+		</Scripting>
+	</Addon>
+	<Addon name="Analytics Settings" guid="{C0CC032E-AE4A-4623-A5F9-5EB4A7E00C2A}" type="Setting">
+		<Copy></Copy>
+		<CopyText></CopyText>
+		<DotNetClass></DotNetClass>
+		<ArgumentList></ArgumentList>
+		<instanceSettingPrimaryContentId></instanceSettingPrimaryContentId>
+		<AsAjax>No</AsAjax>
+		<Filter>No</Filter>
+		<Help></Help>
+		<HelpLink></HelpLink>
+		<Icon Link="" width="50" height="50" sprites="0" />
+		<InIframe>No</InIframe>
+		<BlockEditTools>Yes</BlockEditTools>
+		<AliasList></AliasList>
+		<FormXML><![CDATA[<Form>
+	<Tab name="Google Analytics" description="Setting for Google Analytics">
+		<FileContent caption="Google Analytics Global Site Tag" name="GoogleAnalyticsSiteTag" filename="analytics\GoogleAnalyticsSiteTag.html" description="Go to Google Analytics and copy your Global Site Tag (gtag.js) here. This tag will be added at the end of every page."></FileContent>
+	</Tab>
+</Form>]]></FormXML>
+		<IsInline>No</IsInline>
+		<JavascriptInHead></JavascriptInHead>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
+		<Content>No</Content>
+		<Template>No</Template>
+		<Email>No</Email>
+		<Admin>Yes</Admin>
+		<OnPageEndEvent>No</OnPageEndEvent>
+		<OnPageStartEvent>No</OnPageStartEvent>
+		<OnBodyStart>No</OnBodyStart>
+		<OnBodyEnd>No</OnBodyEnd>
+		<RemoteMethod>No</RemoteMethod>
+		<Diagnostic>No</Diagnostic>
+		<category></category>
+		<ProcessRunOnce>No</ProcessRunOnce>
+		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
+		<PageTitle></PageTitle>
+		<RemoteAssetLink></RemoteAssetLink>
+		<Styles></Styles>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
+	</Addon>
+</Collection>
