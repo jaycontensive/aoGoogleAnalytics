@@ -2,7 +2,7 @@
 <Collection name="Google Analytics" guid="{b1743401-851b-4a51-af03-36d9016d18ad}" system="No" updatable="Yes" blockNavigatorNode="No" onInstallAddonGuid="">
 	<HelpLink></HelpLink>
 	<Help></Help>
-	<Addon name="Add Google Analytics To All Pages" guid="{C9EFB120-F42F-4BBF-85B5-F03CA907AD7F}" type="Add-on">
+	<Addon name="GoogleAnalyticsMetaTag" guid="{C9EFB120-F42F-4BBF-85B5-F03CA907AD7F}" type="Add-on">
 		<Copy></Copy>
 		<CopyText></CopyText>
 		<DotNetClass></DotNetClass>
@@ -15,7 +15,7 @@
 		<Icon Link="/analytics.png" width="57" height="59" sprites="4" />
 		<InIframe>No</InIframe>
 		<BlockEditTools>Yes</BlockEditTools>
-		<AliasList></AliasList>
+		<AliasList>Add Google Analytics To All Pages</AliasList>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
 		<JavascriptInHead></JavascriptInHead>
@@ -44,21 +44,14 @@
 		<Styles></Styles>
 		<styleslinkhref></styleslinkhref>
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
-			<Code><![CDATA[function m
-    m = "<!-- Analytics-Addon -->"
-    dim siteTag, cacheKey
-    'cacheKey = cp.cache.createKey("GoogleAnalyticsSiteTag")
-    'siteTag = cp.cache.getText(cacheKey)
-	'if ( siteTag="" ) then
-        siteTag = cp.cdnFiles.read( "analytics\GoogleAnalyticsSiteTag.html" )
-        'call cp.cache.store( cacheKey, siteTag )
-        'siteTag = siteTag & "<!-- cache miss -->"
-    'end if
-    m = m & siteTag
-end function]]></Code>
+			<Code><![CDATA[
+				function m
+					cp.doc.addHeadTag(cp.cdnFiles.read( "analytics\GoogleAnalyticsSiteTag.html" ))
+				end function
+			]]></Code>
 		</Scripting>
 	</Addon>
-	<Addon name="Analytics Settings" guid="{C0CC032E-AE4A-4623-A5F9-5EB4A7E00C2A}" type="Setting">
+	<Addon name="Google Analytics Settings" guid="{C0CC032E-AE4A-4623-A5F9-5EB4A7E00C2A}" type="Setting">
 		<Copy></Copy>
 		<CopyText></CopyText>
 		<DotNetClass></DotNetClass>
